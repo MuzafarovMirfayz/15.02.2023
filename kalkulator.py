@@ -1,132 +1,70 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
 app = QApplication([])
 oyna = QWidget()
-oyna.setFixedSize(400, 450)
 a = ""
-def son1():
-    lbl.setText(lbl.text()+"1")
-def son2():
-    lbl.setText(lbl.text()+"2")
-def son3():
-    lbl.setText(lbl.text()+"3")
-def son4():
-    lbl.setText(lbl.text() +"4")
-def son5():
-    lbl.setText(lbl.text() +"5")
-def son6():
-    lbl.setText(lbl.text() +"6")
-def son7():
-    lbl.setText(lbl.text() +"7")
-def son8():
-    lbl.setText(lbl.text() +"8")
-def son9():
-    lbl.setText(lbl.text() +"9")
-def son0():
-    lbl.setText(lbl.text() +"0")
+oyna.setFixedSize(400, 450)
+def son1():tek();lbl.setText(lbl.text()+"1")
+def son2():tek();lbl.setText(lbl.text()+"2")
+def son3():tek();lbl.setText(lbl.text()+"3")
+def son4():tek();lbl.setText(lbl.text()+"4")
+def son5():tek();lbl.setText(lbl.text()+"5")
+def son6():tek();lbl.setText(lbl.text()+"6")
+def son7():tek();lbl.setText(lbl.text()+"7")
+def son8():tek();lbl.setText(lbl.text()+"8")
+def son9():tek();lbl.setText(lbl.text()+"9")
+def son0():tek();lbl.setText(lbl.text()+"0")
+def ac():lbl.setText("")
+def tek():
+    if lbl.text().isalpha():
+        lbl.setText("")
 def sonv():
-    lbl.setText(lbl.text() +".")
+    tek()
+    if lbl.text()[::-1].split("+")[0].count(".") == 0 or lbl.text()[::-1].split("-")[0].count(".") == 0 or lbl.text()[::-1].split("*")[0].count(".") == 0 or lbl.text()[::-1].split("/")[0].count(".") == 0:
+        if len(lbl.text())==0 or lbl.text()[-1]=='+' or lbl.text()[-1]=='-' or lbl.text()[-1]=='*' or lbl.text()[-1]=='/' :lbl.setText(lbl.text()+"0.")
+        else: lbl.setText(lbl.text() +".")
 def ko():
+    tek()
     if len(lbl.text())>0:
-        if lbl.text()[-1] == '-' or lbl.text()[-1] == '+' or lbl.text()[-1] == '/' or lbl.text().count("*")!=0:
-            c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1)
-            lbl.setText(c[::-1]+"*")
-        else: 
-            lbl.setText(lbl.text() +"*")
-    else:
-            lbl.setText("0*")
+        if lbl.text()[-1] == '-' or lbl.text()[-1] == '+' or lbl.text()[-1] == '/' :c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1);lbl.setText(c[::-1]+"*")
+        elif lbl.text()[-1]=="*":pass
+        else: lbl.setText(lbl.text() +"*")
+    else:lbl.setText("0*")
 def bo():
+    tek()
     if len(lbl.text())>0:
-        if lbl.text()[-1] == '-' or lbl.text()[-1] == '+' or lbl.text()[-1] == '*' or lbl.text().count("/")!=0:
-            c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1)
-            lbl.setText(c[::-1]+"/")
-        else: 
-            lbl.setText(lbl.text() +"/")
-    else:
-            lbl.setText("0/")
+        if lbl.text()[-1] == '-' or lbl.text()[-1] == '+' or lbl.text()[-1] == '*':c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1);lbl.setText(c[::-1]+"/")
+        elif lbl.text()[-1]=='/':pass
+        else: lbl.setText(lbl.text() +"/")
+    else:lbl.setText("0/")
 def qo():
+    tek()
     if len(lbl.text())>0:
-        if lbl.text()[-1] == '-' or lbl.text()[-1] == '/' or lbl.text()[-1] == '*'  or lbl.text().count("+")!=0:
-            c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1)
-            lbl.setText(c[::-1]+"+")
-        else: 
-            lbl.setText(lbl.text() +"+")
-    else:
-            lbl.setText("0+")
+        if lbl.text()[-1] == '-' or lbl.text()[-1] == '/' or lbl.text()[-1] == '*'  or lbl.text().count("+")!=0:c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1);lbl.setText(c[::-1]+"+")
+        elif lbl.text()[-1]=='/':pass
+        else: lbl.setText(lbl.text() +"+")
+    else:lbl.setText("0+")
 def ay():
+    tek()
     if len(lbl.text())>0:
         if lbl.text()[-1] == '+' or lbl.text()[-1] == '/' or lbl.text()[-1] == '*'  or lbl.text().count("-")!=0:
-            c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1)
-            lbl.setText(c[::-1]+"-")
-        else: 
-            lbl.setText(lbl.text() +"-")
-    else:
-            lbl.setText("0-")
+            c =lbl.text()[::-1].replace(lbl.text()[-1], "", 1);lbl.setText(c[::-1]+"-")
+        elif lbl.text()[-1]=='/':pass
+        else:lbl.setText(lbl.text() +"-")
+    else:lbl.setText("0-")
 def c():
+    tek()
     if len(lbl.text())>0:
         lbl.setText(lbl.text()[::-1].replace(lbl.text()[-1], "", 1)[::-1])
-def ac():
-    lbl.setText("")
 def tengla():
     try:
-        uzb = lbl.text()
-        if lbl.text().count('*')>0 and lbl.text().count('/')==0:
-            b = lbl.text().split('*')
-            ac()
-            if b[0].count(".")>0:
-                c = float(b[0])*float(b[1])
-            elif b[1].count(".")>0:
-                c = float(b[0])*float(b[1])
-            else:
-                c = int(b[0])*int(b[1])
-            if c==int(c):
-                lbl.setText(str(int(c)))
-            else:
-                lbl.setText(str(c))
-        elif lbl.text().count('/')>0:
-            b = lbl.text().split('/')
-            ac()
-            if int(b[1])==0:
-                lbl.setText("Error")
-            else:
-                if b[0].count(".")>0:
-                    c = float(b[0])/float(b[1])
-                elif b[1].count(".")>0:
-                    c = float(b[0])/float(b[1])
-                else:
-                    c = int(b[0])/int(b[1])
-                if c==int(c):
-                    lbl.setText(str(int(c)))
-                else:
-                    lbl.setText(str(c))
-        elif lbl.text().count('+')>0:
-            b = lbl.text().split('+')
-            ac()
-            if b[0].count(".")>0:
-                c = float(b[0])+float(b[1])
-            elif b[1].count(".")>0:
-                c = float(b[0])+float(b[1])
-            else:
-                c = int(b[0])+int(b[1])
-            if c==int(c):
-                lbl.setText(str(int(c)))
-            else:
-                lbl.setText(str(c))
-        elif lbl.text().count('-')>0:
-            b = lbl.text().split('-')
-            ac()
-            if b[0].count(".")>0:
-                c = float(b[0])-float(b[1])
-            elif b[1].count(".")>0:
-                c = float(b[0])-float(b[1])
-            else:
-                c = int(b[0])-int(b[1])
-            if c==int(c):
-                lbl.setText(str(int(c)))
-            else:
-                lbl.setText(str(c))
-    except:
-        lbl.setText(uzb)
+        if float(eval(lbl.text())) == int(eval(lbl.text())):lbl.setText(str(int(eval(lbl.text())))); a  = lbl.text()
+        else:lbl.setText(str(float(eval(lbl.text())))); a  = list(lbl.text())
+        print(a)
+    except:lbl.setText("ERROR")
 def fo():
+    tek()
     try:
         if lbl.text().count("/")>0:
             if lbl.text().count('.')==0:
@@ -185,9 +123,10 @@ def fo():
                 lbl.setText(lbl.text()+f)                
     except:
         pass
+strset = "background:silver"
+oyna.setStyleSheet("background:black")
 lbl = QLabel("", oyna)
-lbl.setGeometry(150, 10, 490, 100)
-lbl.setStyleSheet("color:black; font-size: 25px")
+lbl.setGeometry(10, 10, 380, 100)
 butac = QPushButton('AC', oyna)
 butac.setGeometry(25, 150, 50, 50)
 butac.clicked.connect(ac)
@@ -245,5 +184,10 @@ butv.clicked.connect(sonv)
 butt = QPushButton('=', oyna)
 butt.setGeometry(325, 350, 50, 50)
 butt.clicked.connect(tengla)
+a = [but0, but1, but2, but3, but4, butb, but5, but6, but7, but8, but9, buta, butac, butf, butk, butq, butt, butv, butc]
+for i in a:i.setStyleSheet(strset)
+lbl.setStyleSheet("QLabel""{""border-radius:15px;border : 5px solid blue;""background : silver;""}")
+lbl.setAlignment(Qt.AlignRight)
+lbl.setFont(QFont('Arial', 15))
 oyna.show()
 app.exec_()
