@@ -19,13 +19,14 @@ Before running the application, you need to have Python 3 and PyQt5 installed on
 
 ```bash
 pip install PyQt5
-
+```
 
 ## Running the Calculator
 To run the calculator application, execute the following command:
 
 ```bash
 python calculator.py
+```
 ## Usage
 Use the number buttons (0-9) to input numbers.
 Press the operation buttons (+, -, *, /) to perform calculations.
