@@ -1,41 +1,38 @@
-# Project Name
+# Simple PyQt5 Calculator
 
-A brief description of your project.
+This is a basic calculator application built using PyQt5, a Python library for creating desktop applications with graphical user interfaces (GUIs).
 
-## Table of Contents
+## Features
 
-- [About](#about)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-
-
-## About
-
-Provide a concise overview of your project. Explain what it does, why it's useful, and who it's for. You can also include any relevant background information.
+- Addition, subtraction, multiplication, and division operations.
+- Decimal point (.) support.
+- Percentage calculation.
+- Clear (AC) and backspace (<x) buttons for input control.
+- Responsive GUI design.
+- Error handling for division by zero and other exceptions.
 
 ## Getting Started
 
 ### Prerequisites
 
-List any software, libraries, or dependencies that users need to have installed before they can use your project. For example:
+Before running the application, you need to have Python 3 and PyQt5 installed on your system. You can install PyQt5 using pip:
 
-- Python 3.6+
-- PyQt5
+```bash
+pip install PyQt5
 
-### Installation
 
-Step-by-step instructions on how to install and set up your project. This might include code examples or specific installation commands.
+## Running the Calculator
+To run the calculator application, execute the following command:
 
+```bash
+python calculator.py
 ## Usage
-Provide examples or instructions on how to use your project. Include screenshots or code snippets if applicable. For example:
-
-
+Use the number buttons (0-9) to input numbers.
+Press the operation buttons (+, -, *, /) to perform calculations.
+The "=" button computes the result of the expression.
+The "%" button calculates percentages.
+The "AC" button clears the input.
+The "<x" button removes the last character.
+Use the decimal point (.) for floating-point numbers.
 ## Contributing
-Explain how others can contribute to your project. Include information about creating issues, submitting pull requests, or any coding conventions they should follow.
-
-
-
-
+Contributions to this calculator application are welcome! If you have any suggestions, bug reports, or improvements, feel free to create an issue or submit a pull request.
